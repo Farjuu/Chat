@@ -36,17 +36,13 @@ public class PEOPLE extends Fragment {
 
         view1 = inflater.inflate(R.layout.peoplelayout, container, false);
         recyclerView = view1.findViewById(R.id.my_recycler_view);
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
         layoutManager = new LinearLayoutManager(getContext());
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
 
-         // Contact a = new Contact(R.mipmap.me,"Farjana","01686-042-114");
         Contact a;
          List<Contact> data = new ArrayList<>();
 

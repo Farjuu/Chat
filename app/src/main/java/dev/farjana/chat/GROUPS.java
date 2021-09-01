@@ -38,7 +38,7 @@ public class GROUPS extends Fragment {
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setLayoutManager(layoutManager);
 
-        GroupData a = new GroupData(R.mipmap.me,"Farjana");
+        GroupData a = new GroupData(R.mipmap.cat3,"Pufi");
 
         final List<GroupData> data = new ArrayList<>();
         data.add(a);

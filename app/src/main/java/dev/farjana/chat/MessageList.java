@@ -56,7 +56,6 @@ public class MessageList extends AppCompatActivity {
         mMessageRecycler =  findViewById(R.id.reyclerview_message_list);
         mMessageRecycler.setLayoutManager(new LinearLayoutManager(this));
 
-       // final MainActivity act = new MainActivity();
         imageButton.setOnClickListener(view -> {
             if(!(TextUtils.isEmpty(editText.getText().toString().trim()))) {
                 sendMessage(editText.getText().toString(), i.getStringExtra("people.number"));

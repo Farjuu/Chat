@@ -55,7 +55,6 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
 
         TextView text_message_body,time;
         LinearLayout smslayout ;

@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity
 
         })
                 .setNegativeButton("Cancel ", (dialog12, which) -> {
-                    //Action for "Cancel".
+
                 });
 
         final AlertDialog alert = dialog.create();

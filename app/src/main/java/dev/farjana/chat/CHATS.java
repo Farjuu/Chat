@@ -28,11 +28,8 @@ public class CHATS extends Fragment {
 
         view2 = inflater.inflate(R.layout.chatslayout,container,false);
         RecyclerView recyclerView = view2.findViewById(R.id.my_recycler_view);
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        recyclerView.setHasFixedSize(true);
+         recyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 DividerItemDecoration.VERTICAL);
@@ -41,9 +38,9 @@ public class CHATS extends Fragment {
 
         // Demo data added....
 
-        Data a = new Data(R.mipmap.me,"Farjana","plz come back","12;30");
-        Data b = new Data(R.mipmap.me,"Farjana","plz come back","12;30");
-        Data C = new Data(R.mipmap.ic_launcher_round,"ic-launcher","hello","12;30");
+        Data a = new Data(R.mipmap.cat,"Shushi","I want fish","12:35");
+        Data b = new Data(R.mipmap.cat2,"Minuu","what do u do?","12:30");
+        Data C = new Data(R.mipmap.cat3,"Pufi","meaw","12:20");
 
         final List<Data> data = new ArrayList<>();
         data.add(a);

@@ -26,11 +26,8 @@ public class AdapterClass extends Adapter<AdapterClass.ViewHolder> {
 
 
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
+
         CircleImageView imageView;
         TextView name,lastText,time;
         LinearLayout chatLayout;
@@ -46,13 +43,11 @@ public class AdapterClass extends Adapter<AdapterClass.ViewHolder> {
         }
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
     public AdapterClass(List<Data> list, Context context) {
         this.list = list;
         this.context = context;
     }
 
-    // Create new views (invoked by the layout manager)
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent,
@@ -71,11 +66,8 @@ public class AdapterClass extends Adapter<AdapterClass.ViewHolder> {
         return holder;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
-    @Override
+     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
 
         holder.imageView.setImageResource(list.get(position).imageId);
         holder.name.setText(list.get(position).nameTxt);
@@ -83,7 +75,6 @@ public class AdapterClass extends Adapter<AdapterClass.ViewHolder> {
         holder.time.setText(list.get(position).time);
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return list.size();
