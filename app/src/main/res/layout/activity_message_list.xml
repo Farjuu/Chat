@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+
+    tools:context="dev.farjana.chat.MessageList"
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reyclerview_message_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="9">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!-- A horizontal line between the chatbox and RecyclerView -->
+
+    <LinearLayout
+        android:id="@+id/layout_chatbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:minHeight="48dp"
+        android:layout_weight="1"
+        android:background="#ffffff">
+
+        <EditText
+            android:id="@+id/edittext_chatbox"
+            android:hint="@string/enter_message"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:maxLines="6"
+            tools:ignore="NestedWeights"
+            android:autofillHints="name"
+            android:inputType="text" />
+
+        <ImageButton
+            android:id="@+id/button_chatbox_send"
+            android:layout_width="64dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center|bottom"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:src="@mipmap/send"
+            android:focusable="true"
+            android:contentDescription="@string/sendbutton" />
+
+    </LinearLayout>
+</LinearLayout>

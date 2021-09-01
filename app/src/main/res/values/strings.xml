@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Chat</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_start">StartActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="login">LogIn</string>
+    <string name="settings">Settings</string>
+    <string name="communicate">Communicate</string>
+    <string name="invite">Invite</string>
+    <string name="share">Share</string>
+    <string name="enter_message">Enter message</string>
+    <string name="sendbutton">sendbutton</string>
+    <string name="user_name">Farjana Akter</string>
+    <string name="phn_num">01686–042–114</string>
+    <string name="score">Left : 8/10</string>
+    <string name="day_cnt">per day</string>
+    <string name="user_img_view">user_img_view</string>
+    <string name="coming_txt">hi man, how are you?</string>
+    <string name="txt_coming_time">11:40</string>
+    <string name="givn_txt">hello, hello!</string>
+    <string name="givn_time">11:40</string>
+    <string name="floating">floating</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+</resources>

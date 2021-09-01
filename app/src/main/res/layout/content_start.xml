@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="dev.farjana.chat.MainActivity"
+    tools:showIn="@layout/app_bar_start">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/my_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:clickable="true"
+        app:tabSelectedTextColor="?attr/colorPrimary"
+        app:tabTextColor="?attr/colorButtonNormal"
+        app:tabIndicatorColor="@color/colorPrimary"
+        android:focusable="true"
+        tools:ignore="MissingConstraints">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/my_viewPage"
+        android:layout_width="383dp"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+    </androidx.viewpager.widget.ViewPager>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
