@@ -13,13 +13,11 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -27,22 +25,10 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 
-import dev.farjana.chat.MessageData.model.Messages;
-import dev.farjana.chat.MessageData.remote.APIService;
-import dev.farjana.chat.MessageData.remote.ApiUtils;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
-
-    private static final String TAG = "";
-
     NavigationView navigationView;
-    private static APIService mAPIService;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,7 +108,6 @@ public class MainActivity extends AppCompatActivity
 
     private void initiatePopupWindow() {
 
-        mAPIService = ApiUtils.getAPIService();
         AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
         dialog.setCancelable(false);
         dialog.setTitle(Html.fromHtml("<font color='#448aff'>New Contact</font>"));
@@ -158,7 +143,7 @@ public class MainActivity extends AppCompatActivity
             String messsage = Txtinput.getText().toString().trim();
             String number = phnNum.getText().toString().trim();
             if (!TextUtils.isEmpty(messsage) && !TextUtils.isEmpty(number)) {
-                sendMessage(messsage, number);
+                MessageList.mAPIService.sendMessage(messsage, number);
             }
 
         })
@@ -170,42 +155,17 @@ public class MainActivity extends AppCompatActivity
         alert.show();
     }
 
-   private void sendMessage(final String message, String number) {
-
-        //  Toast.makeText(this,"on sendMessage method",Toast.LENGTH_SHORT).show();
-        mAPIService.sendMessage(message, number).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<Messages>() {
-
-                    @Override
-                    public void onCompleted() {
-                        //   Toast.makeText(getBaseContext(),"on oncomplete method",Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        // Toast.makeText(getBaseContext(),"on onerror method",Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onNext(Messages message) {
-                        //  Toast.makeText(getBaseContext(),"on ONNEXT method",Toast.LENGTH_LONG).show();
-                        showResponse(message.toString());
-                    }
-                });
-    }
-
-    public void showResponse(String response) {
-        Toast.makeText(this, response, Toast.LENGTH_LONG).show();
-        Log.i(TAG, "message gone....");
-    }
-
     private void setupViewPager(ViewPager my_pager) {
         ViewPagerAdapter vp = new ViewPagerAdapter(getSupportFragmentManager());
+
         vp.addMyFragment(new PEOPLE(), "CONTACTS");
+
         vp.addMyFragment(new CHATS(), "CHATS");
+
         vp.addMyFragment(new GROUPS(), "GROUPS");
 
         my_pager.setAdapter(vp);
+
     }
 
     @Override

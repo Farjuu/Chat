@@ -60,6 +60,7 @@ public class AdapterClass extends Adapter<AdapterClass.ViewHolder> {
                     int position = holder.getAbsoluteAdapterPosition();
                     Intent intent = new Intent(context,MessageList.class);
                     intent.putExtra("people.name",list.get(position).nameTxt);
+                    intent.putExtra("people.image",list.get(position).imageId);
                     context.startActivity(intent);
                 }
         );

@@ -4,55 +4,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="10"
 
     tools:context="dev.farjana.chat.MessageList"
     >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/reyclerview_message_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="9">
-    </androidx.recyclerview.widget.RecyclerView>
 
-    <!-- A horizontal line between the chatbox and RecyclerView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="@dimen/cardview_compat_inset_shadow"
+
+        android:background="@color/cardview_dark_background"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgId"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/user_img_view"
+            android:src="@mipmap/cat3" />
+
+        <TextView
+            android:id="@+id/sender"
+            android:layout_width="247dp"
+            android:layout_height="53dp"
+            android:layout_margin="20dp"
+            android:text="@string/user_name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"
+            android:textStyle="bold|italic">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reyclerview_message_list"
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:scrollbars="vertical"
+            android:divider="@android:color/darker_gray"            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
 
     <LinearLayout
         android:id="@+id/layout_chatbox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:minHeight="48dp"
-        android:layout_weight="1"
-        android:background="#ffffff">
+        android:layout_height="70dp"
+        android:gravity="bottom"
+        android:weightSum="5"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/edittext_chatbox"
-            android:hint="@string/enter_message"
-            android:background="@android:color/transparent"
-            android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:maxLines="6"
-            tools:ignore="NestedWeights"
+            android:layout_height="60dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="4"
             android:autofillHints="name"
-            android:inputType="text" />
+            android:background="@android:drawable/editbox_background"
+            android:hint="@string/enter_message"
+            android:inputType="text"
+            android:maxLines="6"
+            android:textColor="@android:color/black"
+            tools:ignore="NestedWeights,TextContrastCheck" />
 
         <ImageButton
+            android:layout_weight="1"
             android:id="@+id/button_chatbox_send"
-            android:layout_width="64dp"
-            android:layout_height="58dp"
-            android:layout_gravity="center|bottom"
-            android:background="?attr/selectableItemBackground"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="end|bottom"
+            android:background="@android:drawable/editbox_background"
             android:clickable="true"
-            android:gravity="center"
-            android:src="@mipmap/send"
+            android:contentDescription="@string/sendbutton"
             android:focusable="true"
-            android:contentDescription="@string/sendbutton" />
+            android:gravity="center"
+            android:src="@mipmap/send" />
 
     </LinearLayout>
 </LinearLayout>

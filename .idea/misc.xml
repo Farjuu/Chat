@@ -7,7 +7,7 @@
         <entry key="..\:/projects/Chat/app/src/main/res/layout/activity_message_list.xml" value="0.25" />
         <entry key="..\:/projects/Chat/app/src/main/res/layout/app_bar_start.xml" value="0.18" />
         <entry key="..\:/projects/Chat/app/src/main/res/layout/chatslayout.xml" value="0.1" />
-        <entry key="..\:/projects/Chat/app/src/main/res/layout/chatview.xml" value="0.1" />
+        <entry key="..\:/projects/Chat/app/src/main/res/layout/chatview.xml" value="0.18" />
         <entry key="..\:/projects/Chat/app/src/main/res/layout/contactview.xml" value="0.15" />
         <entry key="..\:/projects/Chat/app/src/main/res/layout/content_start.xml" value="0.1" />
         <entry key="..\:/projects/Chat/app/src/main/res/layout/directsmslayout.xml" value="0.1" />
@@ -31,7 +31,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.18" />
+        <option name="scale" value="0.22" />
       </ProjectState>
     </option>
   </component>

@@ -7,12 +7,14 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import dev.farjana.chat.MessageData.model.Messages;
 import dev.farjana.chat.MessageData.remote.APIService;
 import dev.farjana.chat.MessageData.remote.ApiUtils;
@@ -27,15 +29,19 @@ import java.util.List;
 
 
 public class MessageList extends AppCompatActivity {
+
     private static final String TAG ="" ;
     RecyclerView mMessageRecycler;
     MessageListAdapter mMessageAdapter;
     final List<BaseMessage> messageList = new ArrayList<>();
     static APIService mAPIService;
 
+    CircleImageView senderImage;
+    TextView senderName;
     Intent i;
     EditText editText;
     ImageButton imageButton;
+
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
@@ -43,16 +49,13 @@ public class MessageList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_list);
 
+        initializeAll();
+
         i = getIntent();
 
-     //   Toast.makeText(this,i.getStringExtra("people.name"),Toast.LENGTH_LONG).show();
-        setTitle(i.getStringExtra("people.name"));
-       // Toast.makeText(this,i.getStringExtra("people.number"),Toast.LENGTH_LONG).show();
+        senderName.setText(i.getStringExtra("people.name"));
+       // senderImage.setImageResource(Integer.parseInt(i.getStringExtra("people.imageId")));
 
-        editText = findViewById(R.id.edittext_chatbox);
-        imageButton = findViewById(R.id.button_chatbox_send);
-
-       // Toast.makeText(this, "here....", Toast.LENGTH_SHORT).show();
         mMessageRecycler =  findViewById(R.id.reyclerview_message_list);
         mMessageRecycler.setLayoutManager(new LinearLayoutManager(this));
 
@@ -66,6 +69,15 @@ public class MessageList extends AppCompatActivity {
         });
         mMessageAdapter = new MessageListAdapter(messageList,this);
         mMessageRecycler.setAdapter(mMessageAdapter);
+    }
+
+    private void initializeAll() {
+        senderImage = findViewById(R.id.imgId);
+        senderName = findViewById(R.id.sender);
+        editText = findViewById(R.id.edittext_chatbox);
+        imageButton = findViewById(R.id.button_chatbox_send);
+
+
     }
 
     private void sendMessage(String message, String number) {
