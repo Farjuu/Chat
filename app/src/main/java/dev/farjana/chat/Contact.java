@@ -14,7 +14,7 @@ class Contact {
     }
 
 
-    Contact( int imageId, String nameTxt, String contactNumber) {
+    Contact( String nameTxt,int imageId, String contactNumber) {
 
         this.imageId = imageId;
         this.nameTxt=nameTxt;

@@ -38,7 +38,7 @@ public class CHATS extends Fragment {
 
         // Demo data added....
 
-        Data a = new Data(R.mipmap.cat,"Shushi","I want fish","12:35");
+        Data a = new Data(R.mipmap.cat4,"Shushi","I want fish","12:35");
         Data b = new Data(R.mipmap.cat2,"Minuu","what do u do?","12:30");
         Data C = new Data(R.mipmap.cat3,"Pufi","meaw","12:20");
 

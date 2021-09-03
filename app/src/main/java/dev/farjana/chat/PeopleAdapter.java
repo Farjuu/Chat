@@ -5,10 +5,13 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -27,9 +30,10 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
 
         CircleImageView imageView;
         TextView name, contactNumber;
-
+        LinearLayout peoplelayout;
         public ViewHolder(View view) {
             super(view);
+            peoplelayout = view.findViewById(R.id.chatLayout);
             imageView = view.findViewById(R.id.profile_image);
             name = view.findViewById(R.id.nameTxt);
             contactNumber = view.findViewById(R.id.contactNumber);
@@ -66,7 +70,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.imageView.setImageResource(list.get(position).getImageId());
+        holder.imageView.setImageResource(R.mipmap.cat);
         holder.name.setText(list.get(position).getNameTxt());
         holder.contactNumber.setText(list.get(position).getContactNumber());
 

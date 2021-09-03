@@ -52,9 +52,14 @@ public class MessageList extends AppCompatActivity {
         initializeAll();
 
         i = getIntent();
-
+        Bundle bundle = getIntent().getExtras();
+        int resId = 0;
+        if(bundle != null){
+            resId = bundle.getInt("people.image");
+        }
+        
         senderName.setText(i.getStringExtra("people.name"));
-       // senderImage.setImageResource(Integer.parseInt(i.getStringExtra("people.imageId")));
+        senderImage.setImageResource(resId);
 
         mMessageRecycler =  findViewById(R.id.reyclerview_message_list);
         mMessageRecycler.setLayoutManager(new LinearLayoutManager(this));
